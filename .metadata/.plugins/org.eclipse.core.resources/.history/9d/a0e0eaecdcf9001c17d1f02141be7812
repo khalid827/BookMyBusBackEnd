@@ -1,0 +1,67 @@
+package com.example.velocity.easybus.model;
+
+import java.util.Date;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="booking")
+public class Booking {
+	
+	@Id
+	private long bookingId;
+	
+
+	private String email;
+	
+	
+	private int price;
+
+
+	public Booking() {
+		
+	}
+
+
+	public Booking(String email, int price) {
+		super();
+		this.email = email;
+		this.price = price;
+	}
+
+
+	public long getBookingId() {
+		return bookingId;
+	}
+
+
+	public void setBookingId(long bookingId) {
+		this.bookingId = bookingId;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public int getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	
+	
+
+	
+
+}

@@ -1,0 +1,5 @@
+package com.example.velocity.easybus.model;
+
+public class BusDetails {
+
+}

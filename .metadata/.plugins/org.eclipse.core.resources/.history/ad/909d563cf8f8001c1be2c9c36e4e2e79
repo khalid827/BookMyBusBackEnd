@@ -1,0 +1,23 @@
+package com.example.velocity.easybus.model;
+
+import java.util.Date;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="busdata")
+public class BusDetails {
+	
+	@Id
+	private String id;
+	
+	private int busNo;
+	private String departure_location;
+	private String arrival_location;
+	
+	private String departure_time;
+	private String arrival_time;
+	
+	private Date date;
+	
+}

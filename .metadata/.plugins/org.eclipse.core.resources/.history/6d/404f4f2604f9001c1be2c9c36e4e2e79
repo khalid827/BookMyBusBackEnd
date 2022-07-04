@@ -1,0 +1,43 @@
+package com.example.velocity.easybus.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.velocity.easybus.model.BusDetails;
+import com.example.velocity.easybus.repository.BusRepository;
+
+@RestController
+@RequestMapping("/details")
+public class BusController {
+
+	@Autowired
+	private BusRepository brepo;
+	
+	//POST-  http://localhost:9090/bus/details/createbus
+	@PostMapping("/createbus")
+	public BusDetails saveBus(@Validated @RequestBody BusDetails bus)
+	{
+		return brepo.save(bus);
+	}
+	
+	@GetMapping("/createbus")
+	public List<BusDetails> getAllBuses()
+	{
+		return brepo.findAll();  //invokes findAll() method of Mongo repository
+	}
+	
+	// GET - http://localhost:9090/bus/details/getbyid/105
+	@GetMapping("/getbyid/{busNo}")
+	public List<BusDetails> getBusbyBusNo(@PathVariable(value="busNo") int busNo)
+	{
+		return (List<BusDetails>) brepo.findBybusNo(busNo);
+	}
+}

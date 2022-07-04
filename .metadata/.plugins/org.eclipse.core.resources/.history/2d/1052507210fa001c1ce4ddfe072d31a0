@@ -1,0 +1,25 @@
+package com.example.velocity.easybus.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.velocity.easybus.model.Booking;
+import com.example.velocity.easybus.repository.BookingRepository;
+import com.example.velocity.easybus.repository.BusRepository;
+
+@RestController
+@RequestMapping("/bookin")
+public class BookingController {
+	
+	@Autowired
+	private BusRepository brepo;
+	@Autowired
+	private BookingRepository bookrepo;
+	
+	/*@PostMapping("/makebook/{id}")
+	public Booking saveBooking(@PathVariable)*/
+	
+}

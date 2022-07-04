@@ -1,0 +1,30 @@
+package com.example.velocity.easybus.model;
+
+import java.util.Date;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="booking")
+public class Booking {
+	
+	@Id
+	private long bookingId;
+	
+
+	private int seatNumber;
+	private String [] seatId;
+	
+	private int price;
+	
+	
+	
+
+	private Date bookingDate;
+	private Date expireDate;
+	
+	private double totalCost;
+	private String status;
+	private String travelClass;
+
+}

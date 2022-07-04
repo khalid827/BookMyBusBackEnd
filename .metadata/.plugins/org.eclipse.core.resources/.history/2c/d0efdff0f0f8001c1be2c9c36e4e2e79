@@ -1,0 +1,12 @@
+spring.application.name=Inventory Management System
+
+server.port=9090
+server.servlet.context-path=/ims
+
+#MongoDB Configuration
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=MyInventory
+
+#path Configuration for swagger api
+spring.mvc.pathmatch.matching-strategy=ant-path-matcher
