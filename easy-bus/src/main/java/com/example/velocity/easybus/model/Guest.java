@@ -9,20 +9,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Document(collection="booking")
+@Document(collection="unauthorizedbooking")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Booking {
+public class Guest {
 	
 	@Id
 	private String id;
 	
 	private String passengerName;
 	private int numberOfseats;
-	private double price;
-	private double totalCost;
 	private long phoneNumber;
+	private String email;
+	
+	private double totalCost;
 	private String nameOnCard;
 	private int creditDebitCard;
 	private int expMonth;
@@ -30,24 +31,12 @@ public class Booking {
 	private int cvv;
 	private Date dateOfBooking;
 	
-	private String email;
 	private String departureLocation;
 	private String arrivalLocation;
 	private String busType;
 	private String departureTime;
 	private String arrivalTime;
 	private String busId;
-	private String status;
 	private String journeyDate;
-	public Long seat;
-	
-	
-	
-	
 
-	
-	
-	
-	
-	
 }

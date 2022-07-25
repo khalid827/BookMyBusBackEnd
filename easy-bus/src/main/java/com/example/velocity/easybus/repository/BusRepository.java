@@ -13,8 +13,8 @@ public interface BusRepository extends MongoRepository<Bus, String> {
 	
 	List<Bus> findBybusNo(int busNo);
 	
-	@Query("{'departureLocation' : :#{#departureLocation}, 'arrivalLocation' : :#{#arrivalLocation}}")
-	List<Bus> findBylocation(@Param("departureLocation") String departureLocation, @Param("arrivalLocation") String arrivalLocation);
+	@Query("{'departureLocation' : :#{#departureLocation}, 'arrivalLocation' : :#{#arrivalLocation}, 'date' : :#{#date}}")
+	List<Bus> findBylocation(@Param("departureLocation") String departureLocation, @Param("arrivalLocation") String arrivalLocation,@Param("date") String date);
 	
 	
 }
